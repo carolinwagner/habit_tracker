@@ -1,5 +1,6 @@
 :root {
   --box-width: 60px;
+  --turqouise: #90d5d0;
 }
 
 body {
@@ -22,7 +23,7 @@ body {
 }
 
 .green {
-  background-color: green;
+  background-color: var(--turqouise);
 }
 
 .red {
