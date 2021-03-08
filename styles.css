@@ -1,0 +1,50 @@
+:root {
+  --box-width: 60px;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.graphs {
+  margin-bottom: 40px;
+}
+
+.week {
+  display: flex;
+}
+
+.weekBox {
+  width: var(--box-width);
+  height: 20px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.double {
+  width: calc(var(--box-width) * 2);
+}
+
+.triple {
+  width: calc(var(--box-width) * 3);
+}
+
+.quadruple {
+  width: calc(var(--box-width) * 4);
+}
+
+.quintuple {
+  width: calc(var(--box-width) * 5);
+}
