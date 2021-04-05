@@ -4,40 +4,107 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
     <title>Habit Tracker</title>
   </head>
   <body>
-    <h1>Sport Tracker</h1>
-
-    <section class="graphs">
-      <div class="personalGraph">
-        <h2>Caro</h2>
-        <div class="week">
-          <div class="weekBox green">1</div>
-          <div class="weekBox red double">2</div>
-          <div class="weekBox orange quintuple">5</div>
-          <div class="weekBox green">1</div>
+    <div class="container mx-auto">
+      <h1 class="flex-auto text-xl font-semibold my-6">Sport Tracker</h1>
+      <section>
+        <div>
+          <h2 class="flex-auto text-lg font-semibold my-3">Caro</h2>
+          <div class="flex h-12 mb-6">
+            <div
+              style="flex: 1"
+              class="flex items-center justify-center bg-green-200 rounded-l-md"
+            >
+              1
+            </div>
+            <div
+              style="flex: 2"
+              class="flex items-center justify-center bg-green-400"
+            >
+              2
+            </div>
+            <div
+              style="flex: 5"
+              class="flex items-center justify-center bg-green-700"
+            >
+              5
+            </div>
+            <div
+              style="flex: 1"
+              class="flex items-center justify-center bg-green-400 rounded-r-md"
+            >
+              1
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="personalGraph">
-        <h2>Moritz</h2>
-        <div class="week">
-          <div class="weekBox green">1</div>
-          <div class="weekBox red">1</div>
-          <div class="weekBox green triple">3</div>
-          <div class="weekBox orange quadruple">4</div>
+        <div>
+          <h2 class="flex-auto text-lg font-semibold my-3">Moritz</h2>
+          <div class="flex h-12 mb-10">
+            <div
+              style="flex: 1"
+              class="flex items-center justify-center bg-green-200 rounded-l-md"
+            >
+              1
+            </div>
+            <div
+              style="flex: 1"
+              class="flex items-center justify-center bg-green-400"
+            >
+              1
+            </div>
+            <div
+              style="flex: 3"
+              class="flex items-center justify-center bg-green-700"
+            >
+              3
+            </div>
+            <div
+              style="flex: 4"
+              class="flex items-center justify-center bg-green-400 rounded-r-md"
+            >
+              4
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="actions">
-      <button>Caro</button>
-      <button>Moritz</button>
-      <button>workout</button>
-      <button>joggen</button>
-      <button>ok</button>
-    </section>
+      <section class="flex justify-between my-3">
+        <div class="flex">
+          <img
+            src="http://picsum.photos/200?random=1"
+            class="rounded-full w-20 h-20 shadow-xl"
+          />
+          <img
+            src="http://picsum.photos/200?random=2"
+            class="rounded-full w-20 h-20 shadow-xl mx-2 border-4 border-green-400"
+          />
+        </div>
+        <div class="flex">
+          <div class="bg-gray-200 p-6 flex items-center rounded-md">
+            Workout
+          </div>
+          <div
+            class="bg-gray-200 p-6 flex items-center rounded-md mx-2 border-4 border-green-400"
+          >
+            Joggen
+          </div>
+        </div>
+        <button
+          class="bg-green-700 p-6 px-14 flex items-center rounded-md text-white font-semibold"
+          type="button"
+        >
+          Add
+        </button>
+      </section>
+    </div>
   </body>
 </html>
