@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Avatar from "./Avatar";
 
 export default function App() {
+  const [selectedUser, setSelectedUser] = useState();
+  useEffect(() => {
+    console.log("test", selectedUser);
+  }, [selectedUser]);
   return (
     <>
       <div className="container mx-auto">
@@ -69,13 +74,19 @@ export default function App() {
 
         <section className="flex justify-between my-3">
           <div className="flex">
-            <img
-              src="http://picsum.photos/200?random=1"
-              className="rounded-full w-20 h-20 shadow-xl cursor-pointer"
+            <Avatar
+              image="http://picsum.photos/200?random=1"
+              isSelected={selectedUser === 0}
+              onClick={() => {
+                setSelectedUser(0);
+              }}
             />
-            <img
-              src="http://picsum.photos/200?random=2"
-              className="rounded-full w-20 h-20 shadow-xl mx-2 border-4 border-green-400 cursor-pointer"
+            <Avatar
+              image="http://picsum.photos/200?random=2"
+              isSelected={selectedUser === 1}
+              onClick={() => {
+                setSelectedUser(1);
+              }}
             />
           </div>
           <div className="flex">
