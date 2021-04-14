@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Avatar from "./Avatar";
+import Exercise from "./Exercise";
 
 export default function App() {
   const [selectedUser, setSelectedUser] = useState();
-  useEffect(() => {
-    console.log("test", selectedUser);
-  }, [selectedUser]);
+  const [isSelectedJogging, setIsSelectedJogging] = useState(false);
+  const [isSelectedWorkout, setIsSelectedWorkout] = useState(false);
   return (
     <>
       <div className="container mx-auto">
@@ -90,12 +90,20 @@ export default function App() {
             />
           </div>
           <div className="flex">
-            <div className="bg-gray-300 p-6 flex items-center rounded-md shadow-xl cursor-pointer">
-              Workout
-            </div>
-            <div className="bg-gray-300 p-6 flex items-center rounded-md shadow-xl mx-2 border-4 border-green-400 cursor-pointer">
-              Joggen
-            </div>
+            <Exercise
+              isSelected={isSelectedJogging}
+              onClick={() => {
+                setIsSelectedJogging(!isSelectedJogging);
+              }}
+              text="Joggen"
+            />
+            <Exercise
+              isSelected={isSelectedWorkout}
+              onClick={() => {
+                setIsSelectedWorkout(!isSelectedWorkout);
+              }}
+              text="Workout"
+            />
           </div>
           <button
             className="bg-green-700 p-6 px-14 flex items-center rounded-md shadow-xl text-white font-semibold"
