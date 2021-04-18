@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Avatar from "./Avatar";
 import Exercise from "./Exercise";
+import IndicatorBar from "./IndicatorBar";
 
 export default function App() {
   const [selectedUser, setSelectedUser] = useState();
@@ -13,32 +14,7 @@ export default function App() {
         <section>
           <div className="font-semibold">
             <h2 className="flex-auto text-lg my-3">Caro</h2>
-            <div className="flex h-12 mb-6">
-              <div
-                style={{ flex: 1 }}
-                className="flex items-center justify-center bg-green-200 rounded-l-md"
-              >
-                1
-              </div>
-              <div
-                style={{ flex: 2 }}
-                className="flex items-center justify-center bg-green-400"
-              >
-                2
-              </div>
-              <div
-                style={{ flex: 5 }}
-                className="flex items-center justify-center bg-green-700"
-              >
-                5
-              </div>
-              <div
-                style={{ flex: 1 }}
-                className="flex items-center justify-center bg-green-400 rounded-r-md"
-              >
-                1
-              </div>
-            </div>
+            <IndicatorBar values={[1, 0, 3, 2, 1, 2, 3, 0, 0, 1]} length={12} />
           </div>
 
           <div className="font-semibold">
