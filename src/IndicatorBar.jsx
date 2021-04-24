@@ -1,45 +1,32 @@
 import React from "react";
 
-export default function IndicatorBar(props) {
+export default function IndicatorBar({ blocks = 14, values }) {
   const colors = [
     "bg-gray-200",
     "bg-green-200",
     "bg-green-400",
     "bg-green-700",
   ];
+  const valuesSum = values.reduce((a, b) => a + b, 0);
+  const zeroPaddingLength = blocks - valuesSum;
+  const zeroArray = new Array(zeroPaddingLength).fill(0);
+  const paddedValues = [...values, ...zeroArray];
+  console.log(paddedValues);
   return (
     <div className="flex h-12 mb-6">
-      {props.values.map((value, index) => {
+      {paddedValues.map((value, index) => {
         return (
           <div
-            style={{ flex: 1 }}
+            style={{ flex: value === 0 ? 1 : value }}
             className={`flex items-center justify-center ${colors[value]} ${
               index === 0 ? "rounded-l-md" : ""
-            } ${index === props.values.length - 1 ? "rounded-r-md" : ""}
+            } ${index === paddedValues.length - 1 ? "rounded-r-md" : ""}
             `}
           >
-            {value}
+            {value === 0 ? "" : value}
           </div>
         );
       })}
-      {/* <div
-        style={{ flex: 2 }}
-        className="flex items-center justify-center bg-green-400"
-      >
-        2
-      </div>
-      <div
-        style={{ flex: 5 }}
-        className="flex items-center justify-center bg-green-700"
-      >
-        5
-      </div>
-      <div
-        style={{ flex: 1 }}
-        className="flex items-center justify-center bg-green-400 rounded-r-md"
-      >
-        1
-      </div> */}
     </div>
   );
 }

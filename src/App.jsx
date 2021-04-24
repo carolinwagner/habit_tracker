@@ -14,7 +14,7 @@ export default function App() {
         <section>
           <div className="font-semibold">
             <h2 className="flex-auto text-lg my-3">Caro</h2>
-            <IndicatorBar values={[1, 0, 3, 2, 1, 2, 3, 0, 0, 1]} length={12} />
+            <IndicatorBar values={[1, 3, 2, 1, 2, 3]} />
           </div>
 
           <div className="font-semibold">
