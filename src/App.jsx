@@ -2,14 +2,17 @@ import React, { useEffect, useState } from "react";
 import Avatar from "./Avatar";
 import Exercise from "./Exercise";
 import IndicatorBar from "./IndicatorBar";
+import moritzImage from "url:../static/moritz_photo.jpeg";
+import caroImage from "url:../static/caro_photo.jpeg";
+import "./styles.css";
 
 export default function App() {
   const [selectedUser, setSelectedUser] = useState();
   const [isSelectedJogging, setIsSelectedJogging] = useState(false);
   const [isSelectedWorkout, setIsSelectedWorkout] = useState(false);
   const [selectedActivity, setSelectedActivity] = useState(1);
-  const [caroValues, setCaroValues] = useState([1, 1, 1, 2, 3, 2]);
-  const [moritzValues, setMoritzValues] = useState([1, 2, 3, 1]);
+  const [caroValues, setCaroValues] = useState([]);
+  const [moritzValues, setMoritzValues] = useState([]);
   useEffect(() => {
     if (isSelectedJogging && isSelectedWorkout) {
       setSelectedActivity(3);
@@ -39,14 +42,14 @@ export default function App() {
         <section className="flex justify-between my-3">
           <div className="flex">
             <Avatar
-              image="http://picsum.photos/200?random=1"
+              image={caroImage}
               isSelected={selectedUser === 0}
               onClick={() => {
                 setSelectedUser(0);
               }}
             />
             <Avatar
-              image="http://picsum.photos/200?random=2"
+              image={moritzImage}
               isSelected={selectedUser === 1}
               onClick={() => {
                 setSelectedUser(1);
@@ -78,6 +81,9 @@ export default function App() {
               } else if (selectedUser === 1) {
                 setMoritzValues([...moritzValues, selectedActivity]);
               }
+              setSelectedUser();
+              setIsSelectedJogging(false);
+              setIsSelectedWorkout(false);
             }}
           >
             Add
